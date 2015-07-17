@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <description name="XtratuM XtratuM Configuration Editor" url="https://github.com/JohanHardy/xmc-editor/updatesite">
+   <description name="XtratuM XtratuM Configuration Editor">
       Update site of XtratuM Configuration Editor.
    </description>
    <feature url="features/com.spacebel.emf.xtratum_1.0.0.201507171728.jar" id="com.spacebel.emf.xtratum" version="1.0.0.201507171728">

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="XtratuM XtratuM Configuration Editor" url="https://github.com/JohanHardy/xmc-editor/updatesite">
+      Update site of XtratuM Configuration Editor.
+   </description>
+   <feature url="features/com.spacebel.emf.xtratum_1.0.0.201507171728.jar" id="com.spacebel.emf.xtratum" version="1.0.0.201507171728">
+      <category name="XtratuM Configuration Editor"/>
+   </feature>
+   <category-def name="XtratuM Configuration Editor" label="XtratuM Configuration Editor">
+      <description>
+         Category enclosing the features relevant to Spacebel Eclipse Tools.
+      </description>
+   </category-def>
+</site>

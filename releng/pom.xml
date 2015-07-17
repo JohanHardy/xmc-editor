@@ -6,7 +6,7 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   
-  <name>XtratuM Configuration Editor parent pom</name>  
+  <name>XtratuM Configuration Editor Releng</name>  
   
   <licenses>
     <license>

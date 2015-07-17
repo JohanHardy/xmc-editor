@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDescription xmlns="http://www.xtratum.org/xm-3.x" name="IHPA FSW" version="1.0.0">
+  <HwDescription>
+    <MemoryLayout>
+      <Region size="512KB" start="0x0" type="rom"/>
+      <Region size="29MB" start="0x40000000" type="stram"/>
+      <Region size="64MB" start="0x60000000" type="sdram"/>
+      <Region size="320MB" start="0xA0000000" type="stram"/>
+      <Region size="512MB" start="0x20000000" type="stram"/>
+      <Region size="2MB" start="0x80000000" type="stram"/>
+      <Region size="7MB" start="0x90000000" type="stram"/>
+      <Region size="4KB" start="0xF0000000" type="sdram"/>
+      <Region size="4MB" start="0x10000000" type="rom"/>
+    </MemoryLayout>
+    <ProcessorTable>
+      <Processor frequency="50Mhz" id="0">
+        <CyclicPlanTable>
+          <Plan id="0" majorFrame="1s" name="Initialisation">
+            <Slot duration="1s" id="0" partitionId="0" start="0ms"/>
+          </Plan>
+          <Plan id="1" majorFrame="1s" name="Maintenance">
+            <Slot duration="100ms" id="0" partitionId="0" start="0ms"/>
+            <Slot duration="100ms" id="1" partitionId="1" start="100ms"/>
+            <Slot duration="100ms" id="2" partitionId="0" start="200ms"/>
+            <Slot duration="100ms" id="3" partitionId="1" start="300ms"/>
+            <Slot duration="100ms" id="4" partitionId="0" start="400ms"/>
+            <Slot duration="100ms" id="5" partitionId="1" start="500ms"/>
+            <Slot duration="100ms" id="6" partitionId="0" start="600ms"/>
+            <Slot duration="100ms" id="7" partitionId="1" start="700ms"/>
+            <Slot duration="100ms" id="8" partitionId="0" start="800ms"/>
+            <Slot duration="100ms" id="9" partitionId="1" start="900ms"/>
+          </Plan>
+          <Plan id="2" majorFrame="1s" name="Operations">
+            <Slot duration="5ms" id="0" partitionId="1" start="0ms"/>
+            <Slot duration="5ms" id="1" partitionId="3" start="5ms"/>
+            <Slot duration="5ms" id="2" partitionId="1" start="10ms"/>
+            <Slot duration="5ms" id="3" partitionId="2" start="15ms"/>
+            <Slot duration="5ms" id="4" partitionId="0" start="20ms"/>
+            <Slot duration="5ms" id="5" partitionId="1" start="25ms"/>
+            <Slot duration="5ms" id="6" partitionId="3" start="30ms"/>
+            <Slot duration="5ms" id="7" partitionId="1" start="35ms"/>
+            <Slot duration="5ms" id="8" partitionId="2" start="40ms"/>
+            <Slot duration="5ms" id="9" partitionId="2" start="45ms"/>
+            <Slot duration="5ms" id="10" partitionId="1" start="50ms"/>
+            <Slot duration="5ms" id="11" partitionId="3" start="55ms"/>
+            <Slot duration="5ms" id="12" partitionId="1" start="60ms"/>
+            <Slot duration="5ms" id="13" partitionId="2" start="65ms"/>
+            <Slot duration="5ms" id="14" partitionId="2" start="70ms"/>
+            <Slot duration="5ms" id="15" partitionId="1" start="75ms"/>
+            <Slot duration="5ms" id="16" partitionId="3" start="80ms"/>
+            <Slot duration="5ms" id="17" partitionId="1" start="85ms"/>
+            <Slot duration="5ms" id="18" partitionId="2" start="90ms"/>
+            <Slot duration="5ms" id="19" partitionId="2" start="95ms"/>
+            <Slot duration="5ms" id="20" partitionId="1" start="100ms"/>
+            <Slot duration="5ms" id="21" partitionId="3" start="105ms"/>
+            <Slot duration="5ms" id="22" partitionId="1" start="110ms"/>
+            <Slot duration="5ms" id="23" partitionId="2" start="115ms"/>
+            <Slot duration="5ms" id="24" partitionId="0" start="120ms"/>
+            <Slot duration="5ms" id="25" partitionId="1" start="125ms"/>
+            <Slot duration="5ms" id="26" partitionId="3" start="130ms"/>
+            <Slot duration="5ms" id="27" partitionId="1" start="135ms"/>
+            <Slot duration="5ms" id="28" partitionId="2" start="140ms"/>
+            <Slot duration="5ms" id="29" partitionId="2" start="145ms"/>
+            <Slot duration="5ms" id="30" partitionId="1" start="150ms"/>
+            <Slot duration="5ms" id="31" partitionId="3" start="155ms"/>
+            <Slot duration="5ms" id="32" partitionId="1" start="160ms"/>
+            <Slot duration="5ms" id="33" partitionId="2" start="165ms"/>
+            <Slot duration="5ms" id="34" partitionId="2" start="170ms"/>
+            <Slot duration="5ms" id="35" partitionId="1" start="175ms"/>
+            <Slot duration="5ms" id="36" partitionId="3" start="180ms"/>
+            <Slot duration="5ms" id="37" partitionId="1" start="185ms"/>
+            <Slot duration="5ms" id="38" partitionId="2" start="190ms"/>
+            <Slot duration="5ms" id="39" partitionId="2" start="195ms"/>
+            <Slot duration="5ms" id="40" partitionId="1" start="200ms"/>
+            <Slot duration="5ms" id="41" partitionId="3" start="205ms"/>
+            <Slot duration="5ms" id="42" partitionId="1" start="210ms"/>
+            <Slot duration="5ms" id="43" partitionId="2" start="215ms"/>
+            <Slot duration="5ms" id="44" partitionId="0" start="220ms"/>
+            <Slot duration="5ms" id="45" partitionId="1" start="225ms"/>
+            <Slot duration="5ms" id="46" partitionId="3" start="230ms"/>
+            <Slot duration="5ms" id="47" partitionId="1" start="235ms"/>
+            <Slot duration="5ms" id="48" partitionId="2" start="240ms"/>
+            <Slot duration="5ms" id="49" partitionId="2" start="245ms"/>
+            <Slot duration="5ms" id="50" partitionId="1" start="250ms"/>
+            <Slot duration="5ms" id="51" partitionId="3" start="255ms"/>
+            <Slot duration="5ms" id="52" partitionId="1" start="260ms"/>
+            <Slot duration="5ms" id="53" partitionId="2" start="265ms"/>
+            <Slot duration="5ms" id="54" partitionId="2" start="270ms"/>
+            <Slot duration="5ms" id="55" partitionId="1" start="275ms"/>
+            <Slot duration="5ms" id="56" partitionId="3" start="280ms"/>
+            <Slot duration="5ms" id="57" partitionId="1" start="285ms"/>
+            <Slot duration="5ms" id="58" partitionId="2" start="290ms"/>
+            <Slot duration="5ms" id="59" partitionId="2" start="295ms"/>
+            <Slot duration="5ms" id="60" partitionId="1" start="300ms"/>
+            <Slot duration="5ms" id="61" partitionId="3" start="305ms"/>
+            <Slot duration="5ms" id="62" partitionId="1" start="310ms"/>
+            <Slot duration="5ms" id="63" partitionId="2" start="315ms"/>
+            <Slot duration="5ms" id="64" partitionId="0" start="320ms"/>
+            <Slot duration="5ms" id="65" partitionId="1" start="325ms"/>
+            <Slot duration="5ms" id="66" partitionId="3" start="330ms"/>
+            <Slot duration="5ms" id="67" partitionId="1" start="335ms"/>
+            <Slot duration="5ms" id="68" partitionId="2" start="340ms"/>
+            <Slot duration="5ms" id="69" partitionId="2" start="345ms"/>
+            <Slot duration="5ms" id="70" partitionId="1" start="350ms"/>
+            <Slot duration="5ms" id="71" partitionId="3" start="355ms"/>
+            <Slot duration="5ms" id="72" partitionId="1" start="360ms"/>
+            <Slot duration="5ms" id="73" partitionId="2" start="365ms"/>
+            <Slot duration="5ms" id="74" partitionId="2" start="370ms"/>
+            <Slot duration="5ms" id="75" partitionId="1" start="375ms"/>
+            <Slot duration="5ms" id="76" partitionId="3" start="380ms"/>
+            <Slot duration="5ms" id="77" partitionId="1" start="385ms"/>
+            <Slot duration="5ms" id="78" partitionId="2" start="390ms"/>
+            <Slot duration="5ms" id="79" partitionId="2" start="395ms"/>
+            <Slot duration="5ms" id="80" partitionId="1" start="400ms"/>
+            <Slot duration="5ms" id="81" partitionId="3" start="405ms"/>
+            <Slot duration="5ms" id="82" partitionId="1" start="410ms"/>
+            <Slot duration="5ms" id="83" partitionId="2" start="415ms"/>
+            <Slot duration="5ms" id="84" partitionId="0" start="420ms"/>
+            <Slot duration="5ms" id="85" partitionId="1" start="425ms"/>
+            <Slot duration="5ms" id="86" partitionId="3" start="430ms"/>
+            <Slot duration="5ms" id="87" partitionId="1" start="435ms"/>
+            <Slot duration="5ms" id="88" partitionId="2" start="440ms"/>
+            <Slot duration="5ms" id="89" partitionId="2" start="445ms"/>
+            <Slot duration="5ms" id="90" partitionId="1" start="450ms"/>
+            <Slot duration="5ms" id="91" partitionId="3" start="455ms"/>
+            <Slot duration="5ms" id="92" partitionId="1" start="460ms"/>
+            <Slot duration="5ms" id="93" partitionId="2" start="465ms"/>
+            <Slot duration="5ms" id="94" partitionId="2" start="470ms"/>
+            <Slot duration="5ms" id="95" partitionId="1" start="475ms"/>
+            <Slot duration="5ms" id="96" partitionId="3" start="480ms"/>
+            <Slot duration="5ms" id="97" partitionId="1" start="485ms"/>
+            <Slot duration="5ms" id="98" partitionId="2" start="490ms"/>
+            <Slot duration="5ms" id="99" partitionId="2" start="495ms"/>
+            <Slot duration="5ms" id="100" partitionId="1" start="500ms"/>
+            <Slot duration="5ms" id="101" partitionId="3" start="505ms"/>
+            <Slot duration="5ms" id="102" partitionId="1" start="510ms"/>
+            <Slot duration="5ms" id="103" partitionId="2" start="515ms"/>
+            <Slot duration="5ms" id="104" partitionId="0" start="520ms"/>
+            <Slot duration="5ms" id="105" partitionId="1" start="525ms"/>
+            <Slot duration="5ms" id="106" partitionId="3" start="530ms"/>
+            <Slot duration="5ms" id="107" partitionId="1" start="535ms"/>
+            <Slot duration="5ms" id="108" partitionId="2" start="540ms"/>
+            <Slot duration="5ms" id="109" partitionId="2" start="545ms"/>
+            <Slot duration="5ms" id="110" partitionId="1" start="550ms"/>
+            <Slot duration="5ms" id="111" partitionId="3" start="555ms"/>
+            <Slot duration="5ms" id="112" partitionId="1" start="560ms"/>
+            <Slot duration="5ms" id="113" partitionId="2" start="565ms"/>
+            <Slot duration="5ms" id="114" partitionId="2" start="570ms"/>
+            <Slot duration="5ms" id="115" partitionId="1" start="575ms"/>
+            <Slot duration="5ms" id="116" partitionId="3" start="580ms"/>
+            <Slot duration="5ms" id="117" partitionId="1" start="585ms"/>
+            <Slot duration="5ms" id="118" partitionId="2" start="590ms"/>
+            <Slot duration="5ms" id="119" partitionId="2" start="595ms"/>
+            <Slot duration="5ms" id="120" partitionId="1" start="600ms"/>
+            <Slot duration="5ms" id="121" partitionId="3" start="605ms"/>
+            <Slot duration="5ms" id="122" partitionId="1" start="610ms"/>
+            <Slot duration="5ms" id="123" partitionId="2" start="615ms"/>
+            <Slot duration="5ms" id="124" partitionId="0" start="620ms"/>
+            <Slot duration="5ms" id="125" partitionId="1" start="625ms"/>
+            <Slot duration="5ms" id="126" partitionId="3" start="630ms"/>
+            <Slot duration="5ms" id="127" partitionId="1" start="635ms"/>
+            <Slot duration="5ms" id="128" partitionId="2" start="640ms"/>
+            <Slot duration="5ms" id="129" partitionId="2" start="645ms"/>
+            <Slot duration="5ms" id="130" partitionId="1" start="650ms"/>
+            <Slot duration="5ms" id="131" partitionId="3" start="655ms"/>
+            <Slot duration="5ms" id="132" partitionId="1" start="660ms"/>
+            <Slot duration="5ms" id="133" partitionId="2" start="665ms"/>
+            <Slot duration="5ms" id="134" partitionId="2" start="670ms"/>
+            <Slot duration="5ms" id="135" partitionId="1" start="675ms"/>
+            <Slot duration="5ms" id="136" partitionId="3" start="680ms"/>
+            <Slot duration="5ms" id="137" partitionId="1" start="685ms"/>
+            <Slot duration="5ms" id="138" partitionId="2" start="690ms"/>
+            <Slot duration="5ms" id="139" partitionId="2" start="695ms"/>
+            <Slot duration="5ms" id="140" partitionId="1" start="700ms"/>
+            <Slot duration="5ms" id="141" partitionId="3" start="705ms"/>
+            <Slot duration="5ms" id="142" partitionId="1" start="710ms"/>
+            <Slot duration="5ms" id="143" partitionId="2" start="715ms"/>
+            <Slot duration="5ms" id="144" partitionId="0" start="720ms"/>
+            <Slot duration="5ms" id="145" partitionId="1" start="725ms"/>
+            <Slot duration="5ms" id="146" partitionId="3" start="730ms"/>
+            <Slot duration="5ms" id="147" partitionId="1" start="735ms"/>
+            <Slot duration="5ms" id="148" partitionId="2" start="740ms"/>
+            <Slot duration="5ms" id="149" partitionId="2" start="745ms"/>
+            <Slot duration="5ms" id="150" partitionId="1" start="750ms"/>
+            <Slot duration="5ms" id="151" partitionId="3" start="755ms"/>
+            <Slot duration="5ms" id="152" partitionId="1" start="760ms"/>
+            <Slot duration="5ms" id="153" partitionId="2" start="765ms"/>
+            <Slot duration="5ms" id="154" partitionId="2" start="770ms"/>
+            <Slot duration="5ms" id="155" partitionId="1" start="775ms"/>
+            <Slot duration="5ms" id="156" partitionId="3" start="780ms"/>
+            <Slot duration="5ms" id="157" partitionId="1" start="785ms"/>
+            <Slot duration="5ms" id="158" partitionId="2" start="790ms"/>
+            <Slot duration="5ms" id="159" partitionId="2" start="795ms"/>
+            <Slot duration="5ms" id="160" partitionId="1" start="800ms"/>
+            <Slot duration="5ms" id="161" partitionId="3" start="805ms"/>
+            <Slot duration="5ms" id="162" partitionId="1" start="810ms"/>
+            <Slot duration="5ms" id="163" partitionId="2" start="815ms"/>
+            <Slot duration="5ms" id="164" partitionId="0" start="820ms"/>
+            <Slot duration="5ms" id="165" partitionId="1" start="825ms"/>
+            <Slot duration="5ms" id="166" partitionId="3" start="830ms"/>
+            <Slot duration="5ms" id="167" partitionId="1" start="835ms"/>
+            <Slot duration="5ms" id="168" partitionId="2" start="840ms"/>
+            <Slot duration="5ms" id="169" partitionId="2" start="845ms"/>
+            <Slot duration="5ms" id="170" partitionId="1" start="850ms"/>
+            <Slot duration="5ms" id="171" partitionId="3" start="855ms"/>
+            <Slot duration="5ms" id="172" partitionId="1" start="860ms"/>
+            <Slot duration="5ms" id="173" partitionId="2" start="865ms"/>
+            <Slot duration="5ms" id="174" partitionId="2" start="870ms"/>
+            <Slot duration="5ms" id="175" partitionId="1" start="875ms"/>
+            <Slot duration="5ms" id="176" partitionId="3" start="880ms"/>
+            <Slot duration="5ms" id="177" partitionId="1" start="885ms"/>
+            <Slot duration="5ms" id="178" partitionId="2" start="890ms"/>
+            <Slot duration="5ms" id="179" partitionId="2" start="895ms"/>
+            <Slot duration="5ms" id="180" partitionId="1" start="900ms"/>
+            <Slot duration="5ms" id="181" partitionId="3" start="905ms"/>
+            <Slot duration="5ms" id="182" partitionId="1" start="910ms"/>
+            <Slot duration="5ms" id="183" partitionId="2" start="915ms"/>
+            <Slot duration="5ms" id="184" partitionId="0" start="920ms"/>
+            <Slot duration="5ms" id="185" partitionId="1" start="925ms"/>
+            <Slot duration="5ms" id="186" partitionId="3" start="930ms"/>
+            <Slot duration="5ms" id="187" partitionId="1" start="935ms"/>
+            <Slot duration="5ms" id="188" partitionId="2" start="940ms"/>
+            <Slot duration="5ms" id="189" partitionId="2" start="945ms"/>
+            <Slot duration="5ms" id="190" partitionId="1" start="950ms"/>
+            <Slot duration="5ms" id="191" partitionId="3" start="955ms"/>
+            <Slot duration="5ms" id="192" partitionId="1" start="960ms"/>
+            <Slot duration="5ms" id="193" partitionId="2" start="965ms"/>
+            <Slot duration="5ms" id="194" partitionId="2" start="970ms"/>
+            <Slot duration="5ms" id="195" partitionId="1" start="975ms"/>
+            <Slot duration="5ms" id="196" partitionId="3" start="980ms"/>
+            <Slot duration="5ms" id="197" partitionId="1" start="985ms"/>
+            <Slot duration="5ms" id="198" partitionId="2" start="990ms"/>
+            <Slot duration="5ms" id="199" partitionId="2" start="995ms"/>
+          </Plan>
+        </CyclicPlanTable>
+      </Processor>
+    </ProcessorTable>
+    <Devices>
+      <Uart baudRate="115200" id="0" name="UART1"/>
+    </Devices>
+  </HwDescription>
+  <XMHypervisor console="UART1">
+    <PhysicalMemoryArea size="1MB"/>
+  </XMHypervisor>
+  <PartitionTable>
+    <Partition console="UART1" flags="system boot fp" id="0" name="OBSM_partition">
+      <PhysicalMemoryAreas>
+        <Area name="OBSM Partition" size="256KB" start="0x41100000"/>
+        <Area name="ROM" size="512KB" start="0x0"/>
+        <Area flags="shared" name="FLASH" size="4MB" start="0x10000000"/>
+        <Area flags="shared" name="SRAM" size="2816KB" start="0x41140000"/>
+        <Area flags="shared" name="SDRAM" size="64MB" start="0x60000000"/>
+      </PhysicalMemoryAreas>
+      <PortTable>
+        <Port direction="destination" name="OBSM_requests" type="queuing"/>
+        <Port direction="source" name="OBSM_request_answers" type="queuing"/>
+        <Port direction="source" name="OBSM_write_non_volatile_memory_requests" type="queuing"/>
+        <Port direction="destination" name="OBSM_write_non_volatile_memory_request_answers" type="queuing"/>
+        <Port direction="source" name="OBSM_housekeeping" type="sampling"/>
+      </PortTable>
+    </Partition>
+    <Partition console="UART1" flags="system fp" id="1" name="CDHS_partition">
+      <PhysicalMemoryAreas>
+        <Area flags="shared" name="CDHS Partition" size="14200KB" start="0x60062000"/>
+        <Area flags="shared" name="CDHS Partition data" size="50944KB" start="0x60E40000"/>
+        <Area flags="shared" name="Bootloader and boot report" size="392KB" start="0x60000000"/>
+        <Area name="IO" size="1MB" start="0x20000000"/>
+        <Area flags="shared" name="Sim0" size="48MB" start="0xA5000000"/>
+        <Area name="DAM0" size="80MB" start="0xA8000000"/>
+        <Area name="DAM1" size="80MB" start="0xAD000000"/>
+        <Area flags="shared" name="TTM" size="80MB" start="0xA0000000"/>
+        <Area name="LEON3 Registers" size="2MB" start="0x80000000"/>
+        <Area name="DSU" size="7MB" start="0x90000000"/>
+        <Area flags="shared" name="Startup TC" size="4MB" start="0x10000000"/>
+      </PhysicalMemoryAreas>
+      <HealthMonitor>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_WRITE_ERROR"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_INSTR_ACCESS_MMU_MISS"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_INSTR_ACCESS_ERROR"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_UNIMPLEMENTED_FLUSH"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_WATCHPOINT_DETECTED"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_DATA_ACCESS_ERROR"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_DATA_ACCESS_MMU_MISS"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_INSTR_ACCESS_EXCEPTION"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_ILLEGAL_INSTR"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_PRIVILEGED_INSTR"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_FP_DISABLED"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_CP_DISABLED"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_REGISTER_HARDWARE_ERROR"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_MEM_ADDR_NOT_ALIGNED"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_FP_EXCEPTION"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_CP_EXCEPTION"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_DATA_ACCESS_EXCEPTION"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_TAG_OVERFLOW"/>
+        <Event action="XM_HM_AC_PROPAGATE" log="yes" name="XM_HM_EV_SPARCV8_DIVIDE_EXCEPTION"/>
+      </HealthMonitor>
+      <HwResources>
+        <Interrupts lines="1 4 5 6 7"/>
+      </HwResources>
+      <PortTable>
+        <Port direction="source" name="OBSM_requests" type="queuing"/>
+        <Port direction="destination" name="OBSM_request_answers" type="queuing"/>
+        <Port direction="destination" name="OBSM_write_non_volatile_memory_requests" type="queuing"/>
+        <Port direction="source" name="OBSM_write_non_volatile_memory_request_answers" type="queuing"/>
+        <Port direction="destination" name="OBSM_housekeeping" type="sampling"/>
+        <Port direction="source" name="AOCS_SW_input_vector" type="sampling"/>
+        <Port direction="destination" name="AOCS_SW_output_vector" type="sampling"/>
+        <Port direction="destination" name="SWAP_power_commands" type="queuing"/>
+        <Port direction="source" name="SWAP_outgoing_tc" type="queuing"/>
+        <Port direction="destination" name="SWAP_incoming_tm" type="queuing"/>
+        <Port direction="source" name="SWAP_commanded_state" type="sampling"/>
+        <Port direction="source" name="SWAP_actual_state" type="sampling"/>
+        <Port direction="source" name="SWAP_availability_state" type="sampling"/>
+        <Port direction="destination" name="SWAP_resource_commanding" type="queuing"/>
+      </PortTable>
+    </Partition>
+    <Partition console="UART1" flags="fp" id="2" name="AOCS_partition">
+      <PhysicalMemoryAreas>
+        <Area flags="shared" name="AOCS Partition" size="3MB" start="0x41200000"/>
+      </PhysicalMemoryAreas>
+      <PortTable>
+        <Port direction="destination" name="AOCS_SW_input_vector" type="sampling"/>
+        <Port direction="source" name="AOCS_SW_output_vector" type="sampling"/>
+        <Port direction="source" name="SWAP_aocs_input_parameters" type="sampling"/>
+        <Port direction="destination" name="SWAP_aocs_output_parameters" type="sampling"/>
+      </PortTable>
+    </Partition>
+    <Partition console="UART1" flags="fp" id="3" name="ASW1_partition">
+      <PhysicalMemoryAreas>
+        <Area flags="shared" name="ASW1 Partition" size="8MB" start="0x41500000"/>
+        <Area flags="shared" name="Sim0" size="48MB" start="0xA5000000"/>
+        <Area flags="shared" name="TTM_OBET" size="4KB" start="0xA2000000"/>
+        <Area name="MCPM" size="32MB" start="0xB2000000"/>
+      </PhysicalMemoryAreas>
+      <PortTable>
+        <Port direction="destination" name="SWAP_commanded_state" type="sampling"/>
+        <Port direction="destination" name="SWAP_actual_state" type="sampling"/>
+        <Port direction="destination" name="SWAP_availability_state" type="sampling"/>
+        <Port direction="source" name="SWAP_power_commands" type="queuing"/>
+        <Port direction="destination" name="SWAP_incoming_tc" type="queuing"/>
+        <Port direction="source" name="SWAP_outgoing_tm" type="queuing"/>
+        <Port direction="destination" name="SWAP_aocs_input_parameters" type="sampling"/>
+        <Port direction="source" name="SWAP_aocs_output_parameters" type="sampling"/>
+        <Port direction="source" name="SWAP_resource_commanding" type="queuing"/>
+      </PortTable>
+    </Partition>
+  </PartitionTable>
+  <Channels>
+    <QueuingChannel maxMessageLength="2068B" maxNoMessages="1">
+      <Source partitionId="1" portName="OBSM_requests"/>
+      <Destination partitionId="0" portName="OBSM_requests"/>
+    </QueuingChannel>
+    <QueuingChannel maxMessageLength="2068B" maxNoMessages="1">
+      <Source partitionId="0" portName="OBSM_request_answers"/>
+      <Destination partitionId="1" portName="OBSM_request_answers"/>
+    </QueuingChannel>
+    <QueuingChannel maxMessageLength="1040B" maxNoMessages="1">
+      <Source partitionId="0" portName="OBSM_write_non_volatile_memory_requests"/>
+      <Destination partitionId="1" portName="OBSM_write_non_volatile_memory_requests"/>
+    </QueuingChannel>
+    <QueuingChannel maxMessageLength="8B" maxNoMessages="1">
+      <Source partitionId="1" portName="OBSM_write_non_volatile_memory_request_answers"/>
+      <Destination partitionId="0" portName="OBSM_write_non_volatile_memory_request_answers"/>
+    </QueuingChannel>
+    <SamplingChannel maxMessageLength="336B">
+      <Source partitionId="0" portName="OBSM_housekeeping"/>
+      <Destination partitionId="1" portName="OBSM_housekeeping"/>
+    </SamplingChannel>
+    <SamplingChannel maxMessageLength="1128B">
+      <Source partitionId="1" portName="AOCS_SW_input_vector"/>
+      <Destination partitionId="2" portName="AOCS_SW_input_vector"/>
+    </SamplingChannel>
+    <SamplingChannel maxMessageLength="4B">
+      <Source partitionId="1" portName="SWAP_commanded_state"/>
+      <Destination partitionId="3" portName="SWAP_commanded_state"/>
+    </SamplingChannel>
+    <SamplingChannel maxMessageLength="4B">
+      <Source partitionId="1" portName="SWAP_actual_state"/>
+      <Destination partitionId="3" portName="SWAP_actual_state"/>
+    </SamplingChannel>
+    <SamplingChannel maxMessageLength="4B">
+      <Source partitionId="1" portName="SWAP_availability_state"/>
+      <Destination partitionId="3" portName="SWAP_availability_state"/>
+    </SamplingChannel>
+    <QueuingChannel maxMessageLength="4KB" maxNoMessages="1">
+      <Source partitionId="3" portName="SWAP_power_commands"/>
+      <Destination partitionId="1" portName="SWAP_power_commands"/>
+    </QueuingChannel>
+    <QueuingChannel maxMessageLength="4KB" maxNoMessages="3">
+      <Source partitionId="1" portName="SWAP_outgoing_tc"/>
+      <Destination partitionId="3" portName="SWAP_incoming_tc"/>
+    </QueuingChannel>
+    <QueuingChannel maxMessageLength="32768B" maxNoMessages="10">
+      <Source partitionId="3" portName="SWAP_outgoing_tm"/>
+      <Destination partitionId="1" portName="SWAP_incoming_tm"/>
+    </QueuingChannel>
+    <QueuingChannel maxMessageLength="16B" maxNoMessages="10">
+      <Source partitionId="3" portName="SWAP_resource_commanding"/>
+      <Destination partitionId="1" portName="SWAP_resource_commanding"/>
+    </QueuingChannel>
+    <SamplingChannel maxMessageLength="16B">
+      <Source partitionId="3" portName="SWAP_aocs_output_parameters"/>
+      <Destination partitionId="2" portName="SWAP_aocs_output_parameters"/>
+    </SamplingChannel>
+    <SamplingChannel maxMessageLength="80B">
+      <Source partitionId="2" portName="SWAP_aocs_input_parameters"/>
+      <Destination partitionId="3" portName="SWAP_aocs_input_parameters"/>
+    </SamplingChannel>
+    <SamplingChannel maxMessageLength="2152B">
+      <Source partitionId="2" portName="AOCS_SW_output_vector"/>
+      <Destination partitionId="1" portName="AOCS_SW_output_vector"/>
+    </SamplingChannel>
+  </Channels>
+</SystemDescription>

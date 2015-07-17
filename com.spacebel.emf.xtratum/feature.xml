@@ -2,7 +2,7 @@
 <feature
       id="com.spacebel.emf.xtratum"
       label="XtratuM Configuration Editor"
-      version="0.0.5.qualifier"
+      version="1.0.0.qualifier"
       provider-name="Spacebel SA">
 
    <description>

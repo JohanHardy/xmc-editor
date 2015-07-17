@@ -5,15 +5,7 @@
   <parent>
   	<groupId>com.spacebel.emf.xtratum</groupId>
   	<artifactId>com.spacebel.emf.xtratum.xmc.parent</artifactId>
-  	<relativePath>../parents/xmc</relativePath>
-  	<version>0.0.5-SNAPSHOT</version>
+  	<relativePath>../releng</relativePath>
+  	<version>1.0.0-SNAPSHOT</version>
   </parent>
-  <issueManagement>
-  	<system>Tracsvn</system>
-  	<url>http://l-svn2/tracsvn/ETools</url>
-  </issueManagement>
-  <ciManagement>
-  	<system>Jenkins</system>
-  	<url>http://l-obswgen:8080/</url>
-  </ciManagement>
 </project>

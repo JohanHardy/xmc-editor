@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>com.spacebel.emf.xtratum</artifactId>
+  <packaging>eclipse-feature</packaging>
+  <parent>
+  	<groupId>com.spacebel.emf.xtratum</groupId>
+  	<artifactId>com.spacebel.emf.xtratum.xmc.parent</artifactId>
+  	<relativePath>../parents/xmc</relativePath>
+  	<version>0.0.5-SNAPSHOT</version>
+  </parent>
+  <issueManagement>
+  	<system>Tracsvn</system>
+  	<url>http://l-svn2/tracsvn/ETools</url>
+  </issueManagement>
+  <ciManagement>
+  	<system>Jenkins</system>
+  	<url>http://l-obswgen:8080/</url>
+  </ciManagement>
+</project>

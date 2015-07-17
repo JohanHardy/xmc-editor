@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.spacebel.emf.xtratum.modeling/src" creationIcons="false"
+    modelPluginID="com.spacebel.emf.xtratum.modeling" modelName="Xmc" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>xmc.ecore</foreignModel>
+  <genPackages prefix="Xmc" basePackage="com.spacebel.emf.xtratum.modeling" resource="XML"
+      disposableProviderFactory="true" multipleEditorPages="false" fileExtensions="xml"
+      ecorePackage="xmc.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xmc.ecore#//DirectionT">
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//DirectionT/source"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//DirectionT/destination"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xmc.ecore#//DisciplineT">
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//DisciplineT/FIFO"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//DisciplineT/PRIORITY"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xmc.ecore#//HmActionT">
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmActionT/XMHMACIGNORE"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmActionT/XMHMACSHUTDOWN"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmActionT/XMHMACPARTITIONCOLDRESET"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmActionT/XMHMACPARTITIONWARMRESET"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmActionT/XMHMACHYPERVISORCOLDRESET"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmActionT/XMHMACHYPERVISORWARMRESET"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmActionT/XMHMACSUSPEND"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmActionT/XMHMACHALT"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmActionT/XMHMACPROPAGATE"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmActionT/XMHMACSWITCHTOMAINTENANCE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xmc.ecore#//HmStringT">
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVINTERNALERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVUNEXPECTEDTRAP"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVPARTITIONERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVPARTITIONINTEGRITY"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVMEMPROTECTION"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVOVERRUN"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSCHEDERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVWATCHDOGTIMER"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVINCOMPATIBLEINTERFACE"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8WRITEERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8INSTRACCESSMMUMISS"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8INSTRACCESSERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8UNIMPLEMENTEDFLUSH"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8WATCHPOINTDETECTED"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8DATAACCESSERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8DATAACCESSMMUMISS"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8INSTRACCESSEXCEPTION"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8ILLEGALINSTR"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8PRIVILEGEDINSTR"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8FPDISABLED"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8CPDISABLED"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8REGISTERHARDWAREERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8MEMADDRNOTALIGNED"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8FPEXCEPTION"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8CPEXCEPTION"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8DATAACCESSEXCEPTION"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8TAGOVERFLOW"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVSPARCV8DIVIDEEXCEPTION"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVAPPDEADLINEMISSED"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVAPPAPPLICATIONERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVAPPNUMERICERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVAPPILLEGALREQUEST"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVAPPSTACKOVERFLOW"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVAPPMEMORYVIOLATION"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVAPPHARDWAREFAULT"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//HmStringT/XMHMEVAPPPOWERFAIL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xmc.ecore#//MemAreaFlagsT">
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//MemAreaFlagsT/unmapped"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//MemAreaFlagsT/shared"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//MemAreaFlagsT/readOnly"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//MemAreaFlagsT/uncacheable"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//MemAreaFlagsT/rom"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//MemAreaFlagsT/shlib"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//MemAreaFlagsT/flag0"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//MemAreaFlagsT/flag1"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//MemAreaFlagsT/flag2"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//MemAreaFlagsT/flag3"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//MemAreaFlagsT/none"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xmc.ecore#//MemRegionT">
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//MemRegionT/sdram"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//MemRegionT/stram"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//MemRegionT/rom"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xmc.ecore#//PartitionFlagsT">
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//PartitionFlagsT/system"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//PartitionFlagsT/fp"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//PartitionFlagsT/boot"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//PartitionFlagsT/none"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xmc.ecore#//PortTypeT">
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//PortTypeT/queuing"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//PortTypeT/sampling"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xmc.ecore#//ProcessorFeaturesT">
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//ProcessorFeaturesT/XMCPULEON2WA1"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//ProcessorFeaturesT/none"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xmc.ecore#//YntfT">
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//YntfT/yes"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//YntfT/no"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//YntfT/true"/>
+      <genEnumLiterals ecoreEnumLiteral="xmc.ecore#//YntfT/false"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="xmc.ecore#//DirectionTObject"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//DisciplineTObject"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//FreqUnitT"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//HexT"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//HmActionTObject"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//HmStringTObject"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//HwIrqIdListT"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//HwIrqIdT"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//IdListT"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//IdStringT"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//IdT"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//MemAreaFlagsListT"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//MemAreaFlagsTObject"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//MemRegionTObject"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//PartitionFlagsListT"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//PartitionFlagsTObject"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//PortTypeTObject"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//ProcessorFeaturesListT"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//ProcessorFeaturesTObject"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//SizeUnitT"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//TimeUnitT"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//VersionT"/>
+    <genDataTypes ecoreDataType="xmc.ecore#//YntfTObject"/>
+    <genClasses ecoreClass="xmc.ecore#//AreaType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//AreaType/flags"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//AreaType/mappedAt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//AreaType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//AreaType/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//AreaType/start"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//ChannelsE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xmc.ecore#//ChannelsE/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//ChannelsE/samplingChannel"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//ChannelsE/queuingChannel"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//CyclicPlanE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xmc.ecore#//CyclicPlanE/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//CyclicPlanE/plan"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//DevicesE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xmc.ecore#//DevicesE/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//DevicesE/memoryBlock"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//DevicesE/uart"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//DevicesE/null"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//DocumentRoot/systemDescription"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//EventType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//EventType/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//EventType/log"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//EventType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//HealthMonitorE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xmc.ecore#//HealthMonitorE/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//HealthMonitorE/event"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//HwDescriptionE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//HwDescriptionE/memoryLayout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//HwDescriptionE/processorTable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//HwDescriptionE/devices"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//HwResourcesE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//HwResourcesE/ioPorts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//HwResourcesE/interrupts"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//HypervisorE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//HypervisorE/physicalMemoryArea"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//HypervisorE/healthMonitor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//HypervisorE/trace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//HypervisorE/console"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//HypervisorE/healthMonitorAppDevice"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//HypervisorE/healthMonitorDevice"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//HypMemoryAreaE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//HypMemoryAreaE/flags"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//HypMemoryAreaE/size"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//InterruptsType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//InterruptsType/lines"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//IoPortsE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xmc.ecore#//IoPortsE/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//IoPortsE/range"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//IoPortsE/restricted"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//IpcPortE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//IpcPortE/partitionId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//IpcPortE/partitionName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//IpcPortE/portName"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//MemoryAreaE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xmc.ecore#//MemoryAreaE/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//MemoryAreaE/area"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//MemoryBlockType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//MemoryBlockType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//MemoryBlockType/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//MemoryBlockType/start"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//MemoryLayoutE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xmc.ecore#//MemoryLayoutE/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//MemoryLayoutE/region"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//NullType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//NullType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//PartitionE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//PartitionE/physicalMemoryAreas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//PartitionE/temporalRequirements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//PartitionE/healthMonitor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//PartitionE/hwResources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//PartitionE/portTable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//PartitionE/trace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//PartitionE/boot"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//PartitionE/console"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//PartitionE/flags"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//PartitionE/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//PartitionE/name"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//PartitionPortsE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xmc.ecore#//PartitionPortsE/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//PartitionPortsE/port"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//PartitionTableType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xmc.ecore#//PartitionTableType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//PartitionTableType/partition"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//PlanE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xmc.ecore#//PlanE/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//PlanE/slot"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//PlanE/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//PlanE/majorFrame"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//PlanE/name"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//PortType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//PortType/direction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//PortType/discipline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//PortType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//PortType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//ProcessorE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//ProcessorE/cyclicPlanTable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//ProcessorE/features"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//ProcessorE/frequency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//ProcessorE/id"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//ProcessorTableType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xmc.ecore#//ProcessorTableType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//ProcessorTableType/processor"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//QueuingChannelType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//QueuingChannelType/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//QueuingChannelType/destination"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//QueuingChannelType/maxMessageLength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//QueuingChannelType/maxNoMessages"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//QueuingChannelType/maxTimeExpiration"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//RangeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//RangeType/base"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//RangeType/noPorts"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//RegionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//RegionType/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//RegionType/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//RegionType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//RestrictedType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//RestrictedType/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//RestrictedType/mask"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//RswE">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//RswE/physicalMemoryAreas"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//SamplingChannelType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//SamplingChannelType/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute xmc.ecore#//SamplingChannelType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference xmc.ecore#//SamplingChannelType/destination"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//SamplingChannelType/maxMessageLength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//SamplingChannelType/refreshPeriod"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//SlotType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//SlotType/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//SlotType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//SlotType/partitionId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//SlotType/start"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//SystemDescriptionType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//SystemDescriptionType/hwDescription"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//SystemDescriptionType/xMHypervisor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//SystemDescriptionType/residentSw"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//SystemDescriptionType/partitionTable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmc.ecore#//SystemDescriptionType/channels"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//SystemDescriptionType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//SystemDescriptionType/version"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//TemporalRequirementsType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//TemporalRequirementsType/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//TemporalRequirementsType/period"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//TraceE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//TraceE/bitmask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//TraceE/device"/>
+    </genClasses>
+    <genClasses ecoreClass="xmc.ecore#//UartType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//UartType/baudRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//UartType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmc.ecore#//UartType/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

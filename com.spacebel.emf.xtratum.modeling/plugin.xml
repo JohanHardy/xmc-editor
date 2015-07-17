@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+
+<plugin>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated xmc -->
+      <package
+            uri="http://www.xtratum.org/xm-3.x"
+            class="com.spacebel.emf.xtratum.modeling.xmc.XmcPackage"
+            genModel="model/xmc.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated xmc -->
+      <parser
+            type="xml"
+            class="com.spacebel.emf.xtratum.modeling.xmc.util.XmcResourceFactoryImpl"/>
+   </extension>
+</plugin>

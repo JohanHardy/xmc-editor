@@ -1,0 +1,444 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://www.xtratum.org/xm-3.x"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.xtratum.org/xm-3.x"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+  <!-- Basic types definition -->
+  <xs:simpleType name="id_t">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="idString_t">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="hwIrqId_t">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxExclusive value="32"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="hwIrqIdList_t">
+    <xs:list itemType="hwIrqId_t"/>
+  </xs:simpleType>
+  <xs:simpleType name="idList_t">
+    <xs:list itemType="id_t"/>
+  </xs:simpleType>
+  <xs:simpleType name="hex_t">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="0x[0-9a-fA-F]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="version_t">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]+.[0-9]+.[0-9]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="freqUnit_t">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]+(.[0-9]+)?([MK][Hh]z)"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="processorFeatures_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="XM_CPU_LEON2_WA1"/>
+      <xs:enumeration value="none"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="discipline_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FIFO"/>
+      <xs:enumeration value="PRIORITY"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="processorFeaturesList_t">
+    <xs:list itemType="processorFeatures_t"/>
+  </xs:simpleType>
+  <xs:simpleType name="partitionFlags_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="system"/>
+      <xs:enumeration value="fp"/>
+      <xs:enumeration value="boot"/>
+      <xs:enumeration value="none"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="partitionFlagsList_t">
+    <xs:list itemType="partitionFlags_t"/>
+  </xs:simpleType>
+  <xs:simpleType name="sizeUnit_t">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]+(.[0-9]+)?([MK]?B)"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="timeUnit_t">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]+(.[0-9]+)?([mu]?[sS])"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--@ \void{<track id="xml-list-hm-events">} @-->
+  <xs:simpleType name="hmString_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="XM_HM_EV_INTERNAL_ERROR"/>
+      <xs:enumeration value="XM_HM_EV_UNEXPECTED_TRAP"/>
+      <xs:enumeration value="XM_HM_EV_PARTITION_ERROR"/>
+      <xs:enumeration value="XM_HM_EV_PARTITION_INTEGRITY"/>
+      <xs:enumeration value="XM_HM_EV_MEM_PROTECTION"/>
+      <xs:enumeration value="XM_HM_EV_OVERRUN"/>
+      <xs:enumeration value="XM_HM_EV_SCHED_ERROR"/>
+      <xs:enumeration value="XM_HM_EV_WATCHDOG_TIMER"/>
+      <xs:enumeration value="XM_HM_EV_INCOMPATIBLE_INTERFACE"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_WRITE_ERROR"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_INSTR_ACCESS_MMU_MISS"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_INSTR_ACCESS_ERROR"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_UNIMPLEMENTED_FLUSH"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_WATCHPOINT_DETECTED"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_DATA_ACCESS_ERROR"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_DATA_ACCESS_MMU_MISS"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_INSTR_ACCESS_EXCEPTION"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_ILLEGAL_INSTR"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_PRIVILEGED_INSTR"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_FP_DISABLED"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_CP_DISABLED"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_REGISTER_HARDWARE_ERROR"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_MEM_ADDR_NOT_ALIGNED"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_FP_EXCEPTION"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_CP_EXCEPTION"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_DATA_ACCESS_EXCEPTION"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_TAG_OVERFLOW"/>
+      <xs:enumeration value="XM_HM_EV_SPARCV8_DIVIDE_EXCEPTION"/>
+      <xs:enumeration value="XM_HM_EV_APP_DEADLINE_MISSED"/>
+      <xs:enumeration value="XM_HM_EV_APP_APPLICATION_ERROR"/>
+      <xs:enumeration value="XM_HM_EV_APP_NUMERIC_ERROR"/>
+      <xs:enumeration value="XM_HM_EV_APP_ILLEGAL_REQUEST"/>
+      <xs:enumeration value="XM_HM_EV_APP_STACK_OVERFLOW"/>
+      <xs:enumeration value="XM_HM_EV_APP_MEMORY_VIOLATION"/>
+      <xs:enumeration value="XM_HM_EV_APP_HARDWARE_FAULT"/>
+      <xs:enumeration value="XM_HM_EV_APP_POWER_FAIL"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--@ \void{</track id="xml-list-hm-events">} @-->
+  <!--@ \void{<track id="xml-list-hm-actions">} @-->
+  <xs:simpleType name="hmAction_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="XM_HM_AC_IGNORE"/>
+      <xs:enumeration value="XM_HM_AC_SHUTDOWN"/>
+      <xs:enumeration value="XM_HM_AC_PARTITION_COLD_RESET"/>
+      <xs:enumeration value="XM_HM_AC_PARTITION_WARM_RESET"/>
+      <xs:enumeration value="XM_HM_AC_HYPERVISOR_COLD_RESET"/>
+      <xs:enumeration value="XM_HM_AC_HYPERVISOR_WARM_RESET"/>
+      <xs:enumeration value="XM_HM_AC_SUSPEND"/>
+      <xs:enumeration value="XM_HM_AC_HALT"/>
+      <xs:enumeration value="XM_HM_AC_PROPAGATE"/>
+      <xs:enumeration value="XM_HM_AC_SWITCH_TO_MAINTENANCE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--@ \void{</track id="xml-list-hm-actions">} @-->
+  <xs:simpleType name="memAreaFlags_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="unmapped"/>
+      <xs:enumeration value="shared"/>
+      <xs:enumeration value="read-only"/>
+      <xs:enumeration value="uncacheable"/>
+      <xs:enumeration value="rom"/>
+      <xs:enumeration value="shlib"/>
+      <xs:enumeration value="flag0"/>
+      <xs:enumeration value="flag1"/>
+      <xs:enumeration value="flag2"/>
+      <xs:enumeration value="flag3"/>
+      <xs:enumeration value="none"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="memAreaFlagsList_t">
+    <xs:list itemType="memAreaFlags_t"/>
+  </xs:simpleType>
+  <xs:simpleType name="memRegion_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="sdram"/>
+      <xs:enumeration value="stram"/>
+      <xs:enumeration value="rom"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="portType_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="queuing"/>
+      <xs:enumeration value="sampling"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="direction_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="source"/>
+      <xs:enumeration value="destination"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="yntf_t">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="yes"/>
+      <xs:enumeration value="no"/>
+      <xs:enumeration value="true"/>
+      <xs:enumeration value="false"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- End Types -->
+  <!-- Elements -->
+  <!-- Hypervisor -->
+  <xs:complexType name="hypervisor_e">
+    <xs:all>
+      <xs:element name="PhysicalMemoryArea" type="hypMemoryArea_e"/>
+      <xs:element name="HealthMonitor" type="healthMonitor_e" minOccurs="0" />
+      <xs:element name="Trace" type="trace_e" minOccurs="0" />
+    </xs:all>
+    <xs:attribute name="console" type="idString_t" use="optional" />
+    <xs:attribute name="healthMonitorDevice" type="idString_t" use="optional" />
+    <xs:attribute name="healthMonitorAppDevice" type="idString_t" use="optional" />
+  </xs:complexType>
+  <!-- Rsw -->
+  <xs:complexType name="rsw_e">
+    <xs:all>
+      <xs:element name="PhysicalMemoryAreas" type="memoryArea_e"/>
+    </xs:all>
+  </xs:complexType>
+  <!-- Partition -->
+  <xs:complexType name="partition_e">
+    <xs:all>
+      <xs:element name="PhysicalMemoryAreas" type="memoryArea_e"/>
+      <xs:element name="TemporalRequirements" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="period" type="timeUnit_t" use="required"/>
+          <xs:attribute name="duration" type="timeUnit_t" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="HealthMonitor" type="healthMonitor_e" minOccurs="0" />
+      <xs:element name="HwResources" type="hwResources_e" minOccurs="0" />
+      <xs:element name="PortTable" type="partitionPorts_e" minOccurs="0" />
+      <xs:element name="Trace" type="trace_e" minOccurs="0" />
+    </xs:all>
+    <xs:attribute name="id" type="id_t" use="required"/>
+    <xs:attribute name="name" type="idString_t" use="optional" />
+    <xs:attribute name="console" type="idString_t" use="optional" />
+    <xs:attribute name="flags" type="partitionFlagsList_t" use="optional" default="none" />
+    <xs:attribute name="boot" type="idString_t" use="optional" default="yes" />
+  </xs:complexType>
+  <!-- Trace -->
+  <xs:complexType name="trace_e">
+    <xs:attribute name="device" type="idString_t" use="required"/>
+    <xs:attribute name="bitmask" type="hex_t" use="required"/>
+  </xs:complexType>
+  <!-- Communication Ports -->
+  <xs:complexType name="partitionPorts_e">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Port">
+        <xs:complexType>
+          <xs:attribute name="name" type="idString_t" use="required"/>
+          <xs:attribute name="direction" type="direction_t" use="required"/>
+          <xs:attribute name="type" type="portType_t" use="required"/>
+          <xs:attribute name="discipline" type="discipline_t" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Channels -->
+  <xs:complexType name="channels_e">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:choice>
+        <xs:element name="SamplingChannel">
+          <xs:complexType>
+            <xs:sequence minOccurs="1">
+              <xs:element name="Source" type="ipcPort_e" />
+              <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                <xs:element name="Destination" type="ipcPort_e"/>
+              </xs:sequence>
+            </xs:sequence>
+            <xs:attribute name="maxMessageLength" type="sizeUnit_t" use="required"/>
+            <xs:attribute name="refreshPeriod" type="timeUnit_t" use="optional" default="0s"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="QueuingChannel">
+          <xs:complexType>
+            <xs:all minOccurs="1">
+              <xs:element name="Source" type="ipcPort_e" />
+              <xs:element name="Destination" type="ipcPort_e"/>
+            </xs:all>
+            <xs:attribute name="maxMessageLength" type="sizeUnit_t" use="required"/>
+            <xs:attribute name="maxNoMessages" type="xs:positiveInteger" use="required"/>
+             <xs:attribute name="maxTimeExpiration" type="timeUnit_t" use="optional" default="0s"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Devices -->
+  <xs:complexType name="devices_e">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:choice>
+        <xs:element name="MemoryBlock" minOccurs="0">
+          <xs:complexType>
+            <xs:attribute name="name" type="idString_t" use="required"/>
+            <xs:attribute name="start" type="hex_t" use="required"/>
+            <xs:attribute name="size" type="sizeUnit_t" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Uart" minOccurs="0">
+          <xs:complexType>
+            <xs:attribute name="name" type="idString_t" use="required"/>
+            <xs:attribute name="id" type="idString_t" use="required"/>
+            <xs:attribute name="baudRate" type="xs:positiveInteger" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Null" minOccurs="0">
+          <xs:complexType>
+            <xs:attribute name="name" type="idString_t" use="optional" />
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- IPC Port -->
+  <xs:complexType name="ipcPort_e">
+    <xs:attribute name="partitionId" type="id_t" use="required"/>
+    <xs:attribute name="partitionName" type="idString_t" use="optional" />
+    <xs:attribute name="portName" type="idString_t" use="required"/>
+  </xs:complexType>
+  <!-- Hw Description -->
+  <xs:complexType name="hwDescription_e">
+    <xs:sequence>
+      <xs:element name="MemoryLayout" type="memoryLayout_e"/>
+      <xs:element name="ProcessorTable">
+        <xs:complexType>
+          <xs:sequence minOccurs="1" maxOccurs="256">
+            <xs:element name="Processor" type="processor_e" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Devices" type="devices_e"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Processor -->
+  <xs:complexType name="processor_e">
+    <xs:all>
+      <xs:element name="CyclicPlanTable" type="cyclicPlan_e"/>
+    </xs:all>
+    <xs:attribute name="id" type="id_t" use="required"/>
+    <xs:attribute name="frequency" type="freqUnit_t" use="optional" />
+    <xs:attribute name="features" type="processorFeaturesList_t" use="optional" default="none"/>
+  </xs:complexType>
+  <!-- HwResource -->
+  <xs:complexType name="hwResources_e">
+    <xs:all>
+      <xs:element name="IoPorts" type="ioPorts_e" minOccurs="0" />
+      <xs:element name="Interrupts" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="lines" type="hwIrqIdList_t" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <!-- Io Ports -->
+  <xs:complexType name="ioPorts_e">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:choice>
+        <xs:element name="Range">
+          <xs:complexType>
+            <xs:attribute name="base" type="hex_t" use="required"/>
+            <xs:attribute name="noPorts" type="xs:positiveInteger" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Restricted">
+          <xs:complexType>
+            <xs:attribute name="address" type="hex_t" use="required"/>
+            <xs:attribute name="mask" type="hex_t" use="optional" default="0x0"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- CyclicPlan -->
+  <xs:complexType name="cyclicPlan_e">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="Plan" type="plan_e" />
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Plan -->
+  <xs:complexType name="plan_e">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="Slot">
+        <xs:complexType>
+          <xs:attribute name="id" type="id_t" use="required"/>
+          <xs:attribute name="start" type="timeUnit_t" use="required"/>
+          <xs:attribute name="duration" type="timeUnit_t" use="required"/>
+          <xs:attribute name="partitionId" type="id_t" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" type="idString_t" use="optional"/>
+    <xs:attribute name="id" type="id_t" use="required"/>
+    <xs:attribute name="majorFrame" type="timeUnit_t" use="required"/>
+  </xs:complexType>
+  <!-- Health Monitor -->
+  <xs:complexType name="healthMonitor_e">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="Event">
+        <xs:complexType>
+          <xs:attribute name="name" type="hmString_t" use="required"/>
+          <xs:attribute name="action" type="hmAction_t" use="required"/>
+          <xs:attribute name="log" type="yntf_t" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Memory Layout -->
+  <xs:complexType name="memoryLayout_e">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="Region">
+        <xs:complexType>
+          <xs:attribute name="type" type="memRegion_t" use="required"/>
+          <xs:attribute name="start" type="hex_t" use="required"/>
+          <xs:attribute name="size" type="sizeUnit_t" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Hypervisor Memory Area -->
+  <xs:complexType name="hypMemoryArea_e">
+    <xs:attribute name="size" type="sizeUnit_t" use="required"/>
+    <xs:attribute name="flags" type="memAreaFlagsList_t" use="optional"/>
+  </xs:complexType>
+  <!-- Memory Area -->
+  <xs:complexType name="memoryArea_e">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="Area">
+        <xs:complexType>
+          <xs:attribute name="name" type="idString_t" use="optional" />
+          <xs:attribute name="start" type="hex_t" use="required"/>
+          <xs:attribute name="size" type="sizeUnit_t" use="required"/>
+          <xs:attribute name="flags" type="memAreaFlagsList_t" use="optional" default="none"/>
+          <xs:attribute name="mappedAt" type="hex_t" use="optional"/> <!-- default="" -->
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!-- Root Element -->
+  <xs:element name="SystemDescription">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="HwDescription" type="hwDescription_e" />
+        <xs:element name="XMHypervisor" type="hypervisor_e"/>
+        <xs:element name="ResidentSw" type="rsw_e" minOccurs="0"/>
+        <xs:element name="PartitionTable">
+          <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+              <xs:element name="Partition" type="partition_e" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Channels" type="channels_e" minOccurs="0" />
+      </xs:all>
+      <xs:attribute name="version" type="version_t" use="required"/>
+      <xs:attribute name="name" type="idString_t" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- End Root Element -->
+  <!-- Elements -->
+</xs:schema>

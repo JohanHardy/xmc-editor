@@ -1,0 +1,682 @@
+@namespace(uri="http://www.xtratum.org/xm-3.x", prefix="")
+package xmc;
+
+import "http://www.eclipse.org/emf/2003/XMLType";
+
+@ExtendedMetaData(name="Area_._type", kind="empty")
+class AreaType {
+
+  @ExtendedMetaData(kind="attribute", name="flags")
+  unsettable attr MemAreaFlagsListT flags = "none";
+
+  @ExtendedMetaData(kind="attribute", name="mappedAt")
+  attr HexT mappedAt;
+
+  @ExtendedMetaData(kind="attribute", name="name")
+  attr IdStringT name;
+
+  @ExtendedMetaData(kind="attribute", name="size")
+  attr SizeUnitT[1] size;
+
+  @ExtendedMetaData(kind="attribute", name="start")
+  attr HexT[1] start;
+}
+
+@ExtendedMetaData(name="channels_e", kind="elementOnly")
+class ChannelsE {
+
+  @ExtendedMetaData(kind="group", name="group:0")
+  !unique attr ecore.EFeatureMapEntry[*] group;
+
+  @ExtendedMetaData(kind="element", name="SamplingChannel", namespace="##targetNamespace", group="#group:0")
+  volatile transient derived !resolve val SamplingChannelType[*] samplingChannel;
+
+  @ExtendedMetaData(kind="element", name="QueuingChannel", namespace="##targetNamespace", group="#group:0")
+  volatile transient derived !resolve val QueuingChannelType[*] queuingChannel;
+}
+
+@ExtendedMetaData(name="cyclicPlan_e", kind="elementOnly")
+class CyclicPlanE {
+
+  @ExtendedMetaData(kind="group", name="group:0")
+  !unique attr ecore.EFeatureMapEntry[*] group;
+
+  @ExtendedMetaData(kind="element", name="Plan", namespace="##targetNamespace", group="#group:0")
+  volatile transient derived !resolve val PlanE[+] plan;
+}
+
+@ExtendedMetaData(name="devices_e", kind="elementOnly")
+class DevicesE {
+
+  @ExtendedMetaData(kind="group", name="group:0")
+  !unique attr ecore.EFeatureMapEntry[*] group;
+
+  @ExtendedMetaData(kind="element", name="MemoryBlock", namespace="##targetNamespace", group="#group:0")
+  volatile transient derived !resolve val MemoryBlockType[*] memoryBlock;
+
+  @ExtendedMetaData(kind="element", name="Uart", namespace="##targetNamespace", group="#group:0")
+  volatile transient derived !resolve val UartType[*] uart;
+
+  @ExtendedMetaData(kind="element", name="Null", namespace="##targetNamespace", group="#group:0")
+  volatile transient derived !resolve val NullType[*] null;
+}
+
+@ExtendedMetaData(name="direction_t")
+enum DirectionT {
+  source = 0;
+  destination = 1;
+}
+
+@ExtendedMetaData(name="direction_t:Object", baseType="direction_t")
+datatype DirectionTObject : org.eclipse.emf.common.util.Enumerator;
+
+@ExtendedMetaData(name="discipline_t")
+enum DisciplineT {
+  FIFO = 0;
+  PRIORITY = 1;
+}
+
+@ExtendedMetaData(name="discipline_t:Object", baseType="discipline_t")
+datatype DisciplineTObject : org.eclipse.emf.common.util.Enumerator;
+
+@ExtendedMetaData(name="", kind="mixed")
+class DocumentRoot {
+
+  @ExtendedMetaData(kind="elementWildcard", name=":mixed")
+  !unique attr ecore.EFeatureMapEntry[*] mixed;
+
+  @ExtendedMetaData(kind="attribute", name="xmlns:prefix")
+  transient !resolve val ecore.EStringToStringMapEntry[*] xMLNSPrefixMap;
+
+  @ExtendedMetaData(kind="attribute", name="xsi:schemaLocation")
+  transient !resolve val ecore.EStringToStringMapEntry[*] xSISchemaLocation;
+
+  @ExtendedMetaData(kind="element", name="SystemDescription", namespace="##targetNamespace")
+  volatile transient derived !resolve val SystemDescriptionType[0..?] systemDescription;
+}
+
+@ExtendedMetaData(name="Event_._type", kind="empty")
+class EventType {
+
+  @ExtendedMetaData(kind="attribute", name="action")
+  unsettable attr HmActionT[1] action;
+
+  @ExtendedMetaData(kind="attribute", name="log")
+  unsettable attr YntfT[1] log;
+
+  @ExtendedMetaData(kind="attribute", name="name")
+  unsettable attr HmStringT[1] name;
+}
+
+@ExtendedMetaData(name="freqUnit_t", baseType="http://www.eclipse.org/emf/2003/XMLType#string", pattern="[0-9]+(.[0-9]+)?([MK][Hh]z)")
+datatype FreqUnitT : java.lang.String;
+
+@ExtendedMetaData(name="healthMonitor_e", kind="elementOnly")
+class HealthMonitorE {
+
+  @ExtendedMetaData(kind="group", name="group:0")
+  !unique attr ecore.EFeatureMapEntry[*] group;
+
+  @ExtendedMetaData(kind="element", name="Event", namespace="##targetNamespace", group="#group:0")
+  volatile transient derived !resolve val EventType[+] event;
+}
+
+@ExtendedMetaData(name="hex_t", baseType="http://www.eclipse.org/emf/2003/XMLType#string", pattern="0x[0-9a-fA-F]+")
+datatype HexT : java.lang.String;
+
+@ExtendedMetaData(name="hmAction_t")
+enum HmActionT {
+  XMHMACIGNORE = 0;
+  XMHMACSHUTDOWN = 1;
+  XMHMACPARTITIONCOLDRESET = 2;
+  XMHMACPARTITIONWARMRESET = 3;
+  XMHMACHYPERVISORCOLDRESET = 4;
+  XMHMACHYPERVISORWARMRESET = 5;
+  XMHMACSUSPEND = 6;
+  XMHMACHALT = 7;
+  XMHMACPROPAGATE = 8;
+  XMHMACSWITCHTOMAINTENANCE = 9;
+}
+
+@ExtendedMetaData(name="hmAction_t:Object", baseType="hmAction_t")
+datatype HmActionTObject : org.eclipse.emf.common.util.Enumerator;
+
+@ExtendedMetaData(name="hmString_t")
+enum HmStringT {
+  XMHMEVINTERNALERROR = 0;
+  XMHMEVUNEXPECTEDTRAP = 1;
+  XMHMEVPARTITIONERROR = 2;
+  XMHMEVPARTITIONINTEGRITY = 3;
+  XMHMEVMEMPROTECTION = 4;
+  XMHMEVOVERRUN = 5;
+  XMHMEVSCHEDERROR = 6;
+  XMHMEVWATCHDOGTIMER = 7;
+  XMHMEVINCOMPATIBLEINTERFACE = 8;
+  XMHMEVSPARCV8WRITEERROR = 9;
+  XMHMEVSPARCV8INSTRACCESSMMUMISS = 10;
+  XMHMEVSPARCV8INSTRACCESSERROR = 11;
+  XMHMEVSPARCV8UNIMPLEMENTEDFLUSH = 12;
+  XMHMEVSPARCV8WATCHPOINTDETECTED = 13;
+  XMHMEVSPARCV8DATAACCESSERROR = 14;
+  XMHMEVSPARCV8DATAACCESSMMUMISS = 15;
+  XMHMEVSPARCV8INSTRACCESSEXCEPTION = 16;
+  XMHMEVSPARCV8ILLEGALINSTR = 17;
+  XMHMEVSPARCV8PRIVILEGEDINSTR = 18;
+  XMHMEVSPARCV8FPDISABLED = 19;
+  XMHMEVSPARCV8CPDISABLED = 20;
+  XMHMEVSPARCV8REGISTERHARDWAREERROR = 21;
+  XMHMEVSPARCV8MEMADDRNOTALIGNED = 22;
+  XMHMEVSPARCV8FPEXCEPTION = 23;
+  XMHMEVSPARCV8CPEXCEPTION = 24;
+  XMHMEVSPARCV8DATAACCESSEXCEPTION = 25;
+  XMHMEVSPARCV8TAGOVERFLOW = 26;
+  XMHMEVSPARCV8DIVIDEEXCEPTION = 27;
+  XMHMEVAPPDEADLINEMISSED = 28;
+  XMHMEVAPPAPPLICATIONERROR = 29;
+  XMHMEVAPPNUMERICERROR = 30;
+  XMHMEVAPPILLEGALREQUEST = 31;
+  XMHMEVAPPSTACKOVERFLOW = 32;
+  XMHMEVAPPMEMORYVIOLATION = 33;
+  XMHMEVAPPHARDWAREFAULT = 34;
+  XMHMEVAPPPOWERFAIL = 35;
+}
+
+@ExtendedMetaData(name="hmString_t:Object", baseType="hmString_t")
+datatype HmStringTObject : org.eclipse.emf.common.util.Enumerator;
+
+@ExtendedMetaData(name="hwDescription_e", kind="elementOnly")
+class HwDescriptionE {
+
+  @ExtendedMetaData(kind="element", name="MemoryLayout", namespace="##targetNamespace")
+  !resolve val MemoryLayoutE[1] memoryLayout;
+
+  @ExtendedMetaData(kind="element", name="ProcessorTable", namespace="##targetNamespace")
+  !resolve val ProcessorTableType[1] processorTable;
+
+  @ExtendedMetaData(kind="element", name="Devices", namespace="##targetNamespace")
+  !resolve val DevicesE[1] devices;
+}
+
+@ExtendedMetaData(name="hwIrqIdList_t", itemType="hwIrqId_t")
+datatype HwIrqIdListT : java.util.List;
+
+@ExtendedMetaData(name="hwIrqId_t", baseType="http://www.eclipse.org/emf/2003/XMLType#integer", minInclusive="0", maxExclusive="16")
+datatype HwIrqIdT : java.math.BigInteger;
+
+@ExtendedMetaData(name="hwResources_e", kind="elementOnly")
+class HwResourcesE {
+
+  @ExtendedMetaData(kind="element", name="IoPorts", namespace="##targetNamespace")
+  !resolve val IoPortsE ioPorts;
+
+  @ExtendedMetaData(kind="element", name="Interrupts", namespace="##targetNamespace")
+  !resolve val InterruptsType interrupts;
+}
+
+@ExtendedMetaData(name="hypervisor_e", kind="elementOnly")
+class HypervisorE {
+
+  @ExtendedMetaData(kind="element", name="PhysicalMemoryArea", namespace="##targetNamespace")
+  !resolve val HypMemoryAreaE[1] physicalMemoryArea;
+
+  @ExtendedMetaData(kind="element", name="HealthMonitor", namespace="##targetNamespace")
+  !resolve val HealthMonitorE healthMonitor;
+
+  @ExtendedMetaData(kind="element", name="Trace", namespace="##targetNamespace")
+  !resolve val TraceE trace;
+
+  @ExtendedMetaData(kind="attribute", name="console")
+  attr IdStringT console;
+
+  @ExtendedMetaData(kind="attribute", name="healthMonitorAppDevice")
+  attr IdStringT healthMonitorAppDevice;
+
+  @ExtendedMetaData(kind="attribute", name="healthMonitorDevice")
+  attr IdStringT healthMonitorDevice;
+}
+
+@ExtendedMetaData(name="hypMemoryArea_e", kind="empty")
+class HypMemoryAreaE {
+
+  @ExtendedMetaData(kind="attribute", name="flags")
+  attr MemAreaFlagsListT flags;
+
+  @ExtendedMetaData(kind="attribute", name="size")
+  attr SizeUnitT[1] size;
+}
+
+@ExtendedMetaData(name="idList_t", itemType="id_t")
+datatype IdListT : java.util.List;
+
+@ExtendedMetaData(name="idString_t", baseType="http://www.eclipse.org/emf/2003/XMLType#string", minLength="1")
+datatype IdStringT : java.lang.String;
+
+@ExtendedMetaData(name="id_t", baseType="http://www.eclipse.org/emf/2003/XMLType#integer", minInclusive="0")
+datatype IdT : java.math.BigInteger;
+
+@ExtendedMetaData(name="Interrupts_._type", kind="empty")
+class InterruptsType {
+
+  @ExtendedMetaData(kind="attribute", name="lines")
+  attr HwIrqIdListT[1] lines;
+}
+
+@ExtendedMetaData(name="ioPorts_e", kind="elementOnly")
+class IoPortsE {
+
+  @ExtendedMetaData(kind="group", name="group:0")
+  !unique attr ecore.EFeatureMapEntry[*] group;
+
+  @ExtendedMetaData(kind="element", name="Range", namespace="##targetNamespace", group="#group:0")
+  volatile transient derived !resolve val RangeType[*] range;
+
+  @ExtendedMetaData(kind="element", name="Restricted", namespace="##targetNamespace", group="#group:0")
+  volatile transient derived !resolve val RestrictedType[*] restricted;
+}
+
+@ExtendedMetaData(name="ipcPort_e", kind="empty")
+class IpcPortE {
+
+  @ExtendedMetaData(kind="attribute", name="partitionId")
+  attr IdT[1] partitionId;
+
+  @ExtendedMetaData(kind="attribute", name="partitionName")
+  attr IdStringT partitionName;
+
+  @ExtendedMetaData(kind="attribute", name="portName")
+  attr IdStringT[1] portName;
+}
+
+@ExtendedMetaData(name="memAreaFlagsList_t", itemType="memAreaFlags_t")
+datatype MemAreaFlagsListT : java.util.List;
+
+@ExtendedMetaData(name="memAreaFlags_t")
+enum MemAreaFlagsT {
+  unmapped = 0;
+  shared = 1;
+  readOnly = 2;
+  uncacheable = 3;
+  rom = 4;
+  shlib = 5;
+  flag0 = 6;
+  flag1 = 7;
+  flag2 = 8;
+  flag3 = 9;
+  none = 10;
+}
+
+@ExtendedMetaData(name="memAreaFlags_t:Object", baseType="memAreaFlags_t")
+datatype MemAreaFlagsTObject : org.eclipse.emf.common.util.Enumerator;
+
+@ExtendedMetaData(name="memoryArea_e", kind="elementOnly")
+class MemoryAreaE {
+
+  @ExtendedMetaData(kind="group", name="group:0")
+  !unique attr ecore.EFeatureMapEntry[*] group;
+
+  @ExtendedMetaData(kind="element", name="Area", namespace="##targetNamespace", group="#group:0")
+  volatile transient derived !resolve val AreaType[+] area;
+}
+
+@ExtendedMetaData(name="MemoryBlock_._type", kind="empty")
+class MemoryBlockType {
+
+  @ExtendedMetaData(kind="attribute", name="name")
+  attr IdStringT[1] name;
+
+  @ExtendedMetaData(kind="attribute", name="size")
+  attr SizeUnitT[1] size;
+
+  @ExtendedMetaData(kind="attribute", name="start")
+  attr HexT[1] start;
+}
+
+@ExtendedMetaData(name="memoryLayout_e", kind="elementOnly")
+class MemoryLayoutE {
+
+  @ExtendedMetaData(kind="group", name="group:0")
+  !unique attr ecore.EFeatureMapEntry[*] group;
+
+  @ExtendedMetaData(kind="element", name="Region", namespace="##targetNamespace", group="#group:0")
+  volatile transient derived !resolve val RegionType[+] region;
+}
+
+@ExtendedMetaData(name="memRegion_t")
+enum MemRegionT {
+  sdram = 0;
+  stram = 1;
+  rom = 2;
+}
+
+@ExtendedMetaData(name="memRegion_t:Object", baseType="memRegion_t")
+datatype MemRegionTObject : org.eclipse.emf.common.util.Enumerator;
+
+@ExtendedMetaData(name="Null_._type", kind="empty")
+class NullType {
+
+  @ExtendedMetaData(kind="attribute", name="name")
+  attr IdStringT name;
+}
+
+@ExtendedMetaData(name="partition_e", kind="elementOnly")
+class PartitionE {
+
+  @ExtendedMetaData(kind="element", name="PhysicalMemoryAreas", namespace="##targetNamespace")
+  !resolve val MemoryAreaE[1] physicalMemoryAreas;
+
+  @ExtendedMetaData(kind="element", name="TemporalRequirements", namespace="##targetNamespace")
+  !resolve val TemporalRequirementsType temporalRequirements;
+
+  @ExtendedMetaData(kind="element", name="HealthMonitor", namespace="##targetNamespace")
+  !resolve val HealthMonitorE healthMonitor;
+
+  @ExtendedMetaData(kind="element", name="HwResources", namespace="##targetNamespace")
+  !resolve val HwResourcesE hwResources;
+
+  @ExtendedMetaData(kind="element", name="PortTable", namespace="##targetNamespace")
+  !resolve val PartitionPortsE portTable;
+
+  @ExtendedMetaData(kind="element", name="Trace", namespace="##targetNamespace")
+  !resolve val TraceE trace;
+
+  @ExtendedMetaData(kind="attribute", name="console")
+  attr IdStringT console;
+
+  @ExtendedMetaData(kind="attribute", name="flags")
+  unsettable attr PartitionFlagsListT flags = "none";
+
+  @ExtendedMetaData(kind="attribute", name="id")
+  attr IdT[1] ~id;
+
+  @ExtendedMetaData(kind="attribute", name="name")
+  attr IdStringT name;
+}
+
+@ExtendedMetaData(name="partitionFlagsList_t", itemType="partitionFlags_t")
+datatype PartitionFlagsListT : java.util.List;
+
+@ExtendedMetaData(name="partitionFlags_t")
+enum PartitionFlagsT {
+  system = 0;
+  fp = 1;
+  vtlb = 2;
+  none = 3;
+}
+
+@ExtendedMetaData(name="partitionFlags_t:Object", baseType="partitionFlags_t")
+datatype PartitionFlagsTObject : org.eclipse.emf.common.util.Enumerator;
+
+@ExtendedMetaData(name="partitionPorts_e", kind="elementOnly")
+class PartitionPortsE {
+
+  @ExtendedMetaData(kind="group", name="group:0")
+  !unique attr ecore.EFeatureMapEntry[*] group;
+
+  @ExtendedMetaData(kind="element", name="Port", namespace="##targetNamespace", group="#group:0")
+  volatile transient derived !resolve val PortType[*] port;
+}
+
+@ExtendedMetaData(name="PartitionTable_._type", kind="elementOnly")
+class PartitionTableType {
+
+  @ExtendedMetaData(kind="group", name="group:0")
+  !unique attr ecore.EFeatureMapEntry[*] group;
+
+  @ExtendedMetaData(kind="element", name="Partition", namespace="##targetNamespace", group="#group:0")
+  volatile transient derived !resolve val PartitionE[+] partition;
+}
+
+@ExtendedMetaData(name="plan_e", kind="elementOnly")
+class PlanE {
+
+  @ExtendedMetaData(kind="group", name="group:0")
+  !unique attr ecore.EFeatureMapEntry[*] group;
+
+  @ExtendedMetaData(kind="element", name="Slot", namespace="##targetNamespace", group="#group:0")
+  volatile transient derived !resolve val SlotType[+] slot;
+
+  @ExtendedMetaData(kind="attribute", name="id")
+  attr IdT[1] ~id;
+
+  @ExtendedMetaData(kind="attribute", name="majorFrame")
+  attr TimeUnitT[1] majorFrame;
+
+  @ExtendedMetaData(kind="attribute", name="name")
+  attr IdStringT name;
+}
+
+@ExtendedMetaData(name="Port_._type", kind="empty")
+class PortType {
+
+  @ExtendedMetaData(kind="attribute", name="direction")
+  unsettable attr DirectionT[1] direction;
+
+  @ExtendedMetaData(kind="attribute", name="discipline")
+  unsettable attr DisciplineT discipline;
+
+  @ExtendedMetaData(kind="attribute", name="name")
+  attr IdStringT[1] name;
+
+  @ExtendedMetaData(kind="attribute", name="type")
+  unsettable attr PortTypeT[1] type;
+}
+
+@ExtendedMetaData(name="portType_t")
+enum PortTypeT {
+  queuing = 0;
+  sampling = 1;
+}
+
+@ExtendedMetaData(name="portType_t:Object", baseType="portType_t")
+datatype PortTypeTObject : org.eclipse.emf.common.util.Enumerator;
+
+@ExtendedMetaData(name="processor_e", kind="elementOnly")
+class ProcessorE {
+
+  @ExtendedMetaData(kind="element", name="CyclicPlanTable", namespace="##targetNamespace")
+  !resolve val CyclicPlanE[1] cyclicPlanTable;
+
+  @ExtendedMetaData(kind="attribute", name="features")
+  unsettable attr ProcessorFeaturesListT features = "none";
+
+  @ExtendedMetaData(kind="attribute", name="frequency")
+  attr FreqUnitT frequency;
+
+  @ExtendedMetaData(kind="attribute", name="id")
+  attr IdT[1] ~id;
+}
+
+@ExtendedMetaData(name="processorFeaturesList_t", itemType="processorFeatures_t")
+datatype ProcessorFeaturesListT : java.util.List;
+
+@ExtendedMetaData(name="processorFeatures_t")
+enum ProcessorFeaturesT {
+  XMCPULEON2WA1 = 0;
+  none = 1;
+}
+
+@ExtendedMetaData(name="processorFeatures_t:Object", baseType="processorFeatures_t")
+datatype ProcessorFeaturesTObject : org.eclipse.emf.common.util.Enumerator;
+
+@ExtendedMetaData(name="ProcessorTable_._type", kind="elementOnly")
+class ProcessorTableType {
+
+  @ExtendedMetaData(kind="group", name="group:0")
+  !unique attr ecore.EFeatureMapEntry[*] group;
+
+  @ExtendedMetaData(kind="element", name="Processor", namespace="##targetNamespace", group="#group:0")
+  volatile transient derived !resolve val ProcessorE[1..256] processor;
+}
+
+@ExtendedMetaData(name="QueuingChannel_._type", kind="elementOnly")
+class QueuingChannelType {
+
+  @ExtendedMetaData(kind="element", name="Source", namespace="##targetNamespace")
+  !resolve val IpcPortE[1] source;
+
+  @ExtendedMetaData(kind="element", name="Destination", namespace="##targetNamespace")
+  !resolve val IpcPortE[1] destination;
+
+  @ExtendedMetaData(kind="attribute", name="maxMessageLength")
+  attr SizeUnitT[1] maxMessageLength;
+
+  @ExtendedMetaData(kind="attribute", name="maxNoMessages")
+  attr type.PositiveInteger[1] maxNoMessages;
+
+  @ExtendedMetaData(kind="attribute", name="maxTimeExpiration")
+  unsettable attr TimeUnitT maxTimeExpiration = "0s";
+}
+
+@ExtendedMetaData(name="Range_._type", kind="empty")
+class RangeType {
+
+  @ExtendedMetaData(kind="attribute", name="base")
+  attr HexT[1] base;
+
+  @ExtendedMetaData(kind="attribute", name="noPorts")
+  attr type.PositiveInteger[1] noPorts;
+}
+
+@ExtendedMetaData(name="Region_._type", kind="empty")
+class RegionType {
+
+  @ExtendedMetaData(kind="attribute", name="size")
+  attr SizeUnitT[1] size;
+
+  @ExtendedMetaData(kind="attribute", name="start")
+  attr HexT[1] start;
+
+  @ExtendedMetaData(kind="attribute", name="type")
+  unsettable attr MemRegionT[1] type;
+}
+
+@ExtendedMetaData(name="Restricted_._type", kind="empty")
+class RestrictedType {
+
+  @ExtendedMetaData(kind="attribute", name="address")
+  attr HexT[1] address;
+
+  @ExtendedMetaData(kind="attribute", name="mask")
+  unsettable attr HexT mask = "0x0";
+}
+
+@ExtendedMetaData(name="rsw_e", kind="elementOnly")
+class RswE {
+
+  @ExtendedMetaData(kind="element", name="PhysicalMemoryAreas", namespace="##targetNamespace")
+  !resolve val MemoryAreaE[1] physicalMemoryAreas;
+}
+
+@ExtendedMetaData(name="SamplingChannel_._type", kind="elementOnly")
+class SamplingChannelType {
+
+  @ExtendedMetaData(kind="element", name="Source", namespace="##targetNamespace")
+  !resolve val IpcPortE[1] source;
+
+  @ExtendedMetaData(kind="group", name="group:1")
+  !unique attr ecore.EFeatureMapEntry[*] group;
+
+  @ExtendedMetaData(kind="element", name="Destination", namespace="##targetNamespace", group="#group:1")
+  volatile transient derived !resolve val IpcPortE[+] destination;
+
+  @ExtendedMetaData(kind="attribute", name="maxMessageLength")
+  attr SizeUnitT[1] maxMessageLength;
+
+  @ExtendedMetaData(kind="attribute", name="refreshPeriod")
+  unsettable attr TimeUnitT refreshPeriod = "0s";
+}
+
+@ExtendedMetaData(name="sizeUnit_t", baseType="http://www.eclipse.org/emf/2003/XMLType#string", pattern="[0-9]+(.[0-9]+)?([MK]?B)")
+datatype SizeUnitT : java.lang.String;
+
+@ExtendedMetaData(name="Slot_._type", kind="empty")
+class SlotType {
+
+  @ExtendedMetaData(kind="attribute", name="duration")
+  attr TimeUnitT[1] duration;
+
+  @ExtendedMetaData(kind="attribute", name="id")
+  attr IdT[1] ~id;
+
+  @ExtendedMetaData(kind="attribute", name="partitionId")
+  attr IdT[1] partitionId;
+
+  @ExtendedMetaData(kind="attribute", name="start")
+  attr TimeUnitT[1] start;
+}
+
+@ExtendedMetaData(name="SystemDescription_._type", kind="elementOnly")
+class SystemDescriptionType {
+
+  @ExtendedMetaData(kind="element", name="HwDescription", namespace="##targetNamespace")
+  !resolve val HwDescriptionE[1] hwDescription;
+
+  @ExtendedMetaData(kind="element", name="XMHypervisor", namespace="##targetNamespace")
+  !resolve val HypervisorE[1] xMHypervisor;
+
+  @ExtendedMetaData(kind="element", name="ResidentSw", namespace="##targetNamespace")
+  !resolve val RswE residentSw;
+
+  @ExtendedMetaData(kind="element", name="PartitionTable", namespace="##targetNamespace")
+  !resolve val PartitionTableType[1] partitionTable;
+
+  @ExtendedMetaData(kind="element", name="Channels", namespace="##targetNamespace")
+  !resolve val ChannelsE channels;
+
+  @ExtendedMetaData(kind="attribute", name="name")
+  attr IdStringT[1] name;
+
+  @ExtendedMetaData(kind="attribute", name="version")
+  attr VersionT[1] version;
+}
+
+@ExtendedMetaData(name="TemporalRequirements_._type", kind="empty")
+class TemporalRequirementsType {
+
+  @ExtendedMetaData(kind="attribute", name="duration")
+  attr TimeUnitT[1] duration;
+
+  @ExtendedMetaData(kind="attribute", name="period")
+  attr TimeUnitT[1] period;
+}
+
+@ExtendedMetaData(name="timeUnit_t", baseType="http://www.eclipse.org/emf/2003/XMLType#string", pattern="[0-9]+(.[0-9]+)?([mu]?[sS])")
+datatype TimeUnitT : java.lang.String;
+
+@ExtendedMetaData(name="trace_e", kind="empty")
+class TraceE {
+
+  @ExtendedMetaData(kind="attribute", name="bitmask")
+  attr HexT[1] bitmask;
+
+  @ExtendedMetaData(kind="attribute", name="device")
+  attr IdStringT[1] device;
+}
+
+@ExtendedMetaData(name="Uart_._type", kind="empty")
+class UartType {
+
+  @ExtendedMetaData(kind="attribute", name="baudRate")
+  attr type.PositiveInteger[1] baudRate;
+
+  @ExtendedMetaData(kind="attribute", name="id")
+  attr IdStringT[1] ~id;
+
+  @ExtendedMetaData(kind="attribute", name="name")
+  attr IdStringT[1] name;
+}
+
+@ExtendedMetaData(name="version_t", baseType="http://www.eclipse.org/emf/2003/XMLType#string", pattern="[0-9]+.[0-9]+.[0-9]+")
+datatype VersionT : java.lang.String;
+
+@ExtendedMetaData(name="yntf_t")
+enum YntfT {
+  yes = 0;
+  no = 1;
+  ~true = 2;
+  ~false = 3;
+}
+
+@ExtendedMetaData(name="yntf_t:Object", baseType="yntf_t")
+datatype YntfTObject : org.eclipse.emf.common.util.Enumerator;
+

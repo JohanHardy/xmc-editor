@@ -1,0 +1,208 @@
+/**
+ */
+package com.spacebel.emf.xtratum.modeling.xmc;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import org.eclipse.emf.common.util.Enumerator;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the literals of the enumeration '<em><b>Port Type T</b></em>',
+ * and utility methods for working with them.
+ * <!-- end-user-doc -->
+ * @see com.spacebel.emf.xtratum.modeling.xmc.XmcPackage#getPortTypeT()
+ * @model extendedMetaData="name='portType_t'"
+ * @generated
+ */
+public enum PortTypeT implements Enumerator {
+	/**
+	 * The '<em><b>Queuing</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #QUEUING_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	QUEUING(0, "queuing", "queuing"),
+
+	/**
+	 * The '<em><b>Sampling</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SAMPLING_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SAMPLING(1, "sampling", "sampling");
+
+	/**
+	 * The '<em><b>Queuing</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Queuing</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #QUEUING
+	 * @model name="queuing"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int QUEUING_VALUE = 0;
+
+	/**
+	 * The '<em><b>Sampling</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Sampling</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #SAMPLING
+	 * @model name="sampling"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SAMPLING_VALUE = 1;
+
+	/**
+	 * An array of all the '<em><b>Port Type T</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private static final PortTypeT[] VALUES_ARRAY =
+		new PortTypeT[] {
+			QUEUING,
+			SAMPLING,
+		};
+
+	/**
+	 * A public read-only list of all the '<em><b>Port Type T</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final List<PortTypeT> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+
+	/**
+	 * Returns the '<em><b>Port Type T</b></em>' literal with the specified literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static PortTypeT get(String literal) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			PortTypeT result = VALUES_ARRAY[i];
+			if (result.toString().equals(literal)) {
+				return result;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Returns the '<em><b>Port Type T</b></em>' literal with the specified name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static PortTypeT getByName(String name) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			PortTypeT result = VALUES_ARRAY[i];
+			if (result.getName().equals(name)) {
+				return result;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Returns the '<em><b>Port Type T</b></em>' literal with the specified integer value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static PortTypeT get(int value) {
+		switch (value) {
+			case QUEUING_VALUE: return QUEUING;
+			case SAMPLING_VALUE: return SAMPLING;
+		}
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final int value;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String name;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String literal;
+
+	/**
+	 * Only this class can construct instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private PortTypeT(int value, String name, String literal) {
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getValue() {
+	  return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+	  return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLiteral() {
+	  return literal;
+	}
+
+	/**
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		return literal;
+	}
+	
+} //PortTypeT

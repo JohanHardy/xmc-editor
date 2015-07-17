@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated xmc -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="com.spacebel.emf.xtratum.modeling.xmc.presentation.XmcModelWizardID"
+            name="%_UI_XmcModelWizard_label"
+            class="com.spacebel.emf.xtratum.modeling.xmc.presentation.XmcModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/XmcModelFile.gif">
+         <description>%_UI_XmcModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated xmc -->
+      <editor
+            id="com.spacebel.emf.xtratum.modeling.xmc.presentation.XmcEditorID"
+            name="%_UI_XmcEditor_label"
+            icon="icons/full/obj16/XmcModelFile.gif"
+            extensions="xml"
+            class="com.spacebel.emf.xtratum.modeling.xmc.presentation.XmcEditor"
+            contributorClass="com.spacebel.emf.xtratum.modeling.xmc.presentation.XmcActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

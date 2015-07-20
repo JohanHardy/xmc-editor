@@ -3,6 +3,6 @@ These plugins implement a EMF based solution to edit and manipulate more easily 
 
 This tool is compatible with XtratuM v3.4.2.
 
-![eee](sample.jpg "title") 
+![ScreenShot](https://raw.github.com/JohanHardy/xmc-editor/master/example.jpg)
 
 In order to install the feature, download the update site and follow the instructions [here](http://help.eclipse.org/mars/index.jsp?topic=/org.eclipse.platform.doc.user/tasks/tasks-127.htm "Instructions").
